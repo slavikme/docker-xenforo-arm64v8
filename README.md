@@ -1,4 +1,4 @@
-# docker pull xfrocks/xenforo
+# docker pull slavikme/xenforo-arm64v8
 Docker containers to develop and run XenForo.
 
 [![CircleCI](https://circleci.com/gh/slavikme/docker-xenforo-arm64v8.svg?style=svg)](https://circleci.com/gh/slavikme/docker-xenforo-arm64v8)
