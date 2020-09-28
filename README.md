@@ -1,8 +1,8 @@
 # docker pull xfrocks/xenforo
 Docker containers to develop and run XenForo.
 
-[![CircleCI](https://circleci.com/gh/xfrocks/docker-xenforo.svg?style=svg)](https://circleci.com/gh/xfrocks/docker-xenforo)
-[![Docker](https://img.shields.io/docker/pulls/xfrocks/xenforo.svg)](https://hub.docker.com/r/xfrocks/xenforo)
+[![CircleCI](https://circleci.com/gh/slavikme/docker-xenforo-arm64v8.svg?style=svg)](https://circleci.com/gh/slavikme/docker-xenforo-arm64v8)
+[![Docker](https://img.shields.io/docker/pulls/slavikme/xenforo-arm64v8.svg)](https://hub.docker.com/r/slavikme/xenforo-arm64v8)
 
 Installed extensions (other than the default ones):
  * apcu
@@ -77,9 +77,9 @@ version: '2'
 
 services:
   php:
-    image: xfrocks/xenforo:php-apache
+    image: slavikme/xenforo-arm64v8:php-apache
     environment:
-      - VIRTUAL_HOST=dev.local.xfrocks.com
+      - VIRTUAL_HOST=dev.local.mydomain.com
     expose:
       - "80"
     links:
@@ -88,7 +88,7 @@ services:
       - .:/var/www/html/
 
   mysql:
-    image: mysql
+    image: arm64v8/mysql
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
       MYSQL_DATABASE: 'database'
@@ -97,7 +97,7 @@ services:
     expose:
       - "3306"
     volumes:
-      - ./internal_data/mysql:/var/lib/mysql
+      - ./db-data:/config
 
   nginx-proxy:
     image: jwilder/nginx-proxy
