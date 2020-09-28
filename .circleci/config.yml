@@ -2,7 +2,7 @@ version: 2
 
 defaults: &defaults
   docker:
-    - image: docker:git
+    - image: arm64v8/docker:git
   environment:
     PUSH: 'yes'
 
