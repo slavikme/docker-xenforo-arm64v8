@@ -30,7 +30,7 @@ for d in */ ; do
     esac
 
     VERSION="$( head -n 1 "VERSION" )"
-    TAG="xfrocks/xenforo:${d%?}"
+    TAG="slavikme/xenforo-arm64v8:${d%?}"
     if [ "x$CIRCLE_BRANCH" != 'xmaster' ]; then
         TAG="$TAG-$CIRCLE_BRANCH"
     fi
