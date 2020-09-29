@@ -13,6 +13,8 @@ ENV COMPOSER_VERSION 1.9.1
 # https://github.com/wimg/PHPCompatibility/releases
 ENV PHP_COMPATIBILITY_VERSION 9.3.4
 
+RUN a2enmod rewrite
+
 COPY tmp /tmp
 RUN /tmp/build.sh
 
